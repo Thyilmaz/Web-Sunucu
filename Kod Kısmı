@@ -1,0 +1,54 @@
+import java.io.*;
+import java.net.*;
+
+public class SimpleWebServer {
+    public static void main(String[] args) throws IOException {
+        ServerSocket server = new ServerSocket(1989);
+        System.out.println("Sunucu çalışıyor: http://localhost:1989/");
+        while (true) {
+            Socket client = server.accept();
+            OutputStream out = client.getOutputStream();
+
+            String html = """
+                    <!doctype html>
+                    <html lang="tr">
+                    <head>
+                      <meta charset="utf-8">
+                      <title>Taha Yılmaz - Web Sunucu</title>
+                      <style>
+                        body { background: linear-gradient(120deg, #f8fafc, #eef2ff);
+                               font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+                               color: #111827; padding: 40px; }
+                        h1 { font-size: 2.2rem; color: #0f172a; margin: 0 0 8px 0; }
+                        h2 { font-size: 1.4rem; color: #0ea5a4; margin: 0 0 16px 0; font-weight: 600; }
+                        h2 span { color: black; }
+                        p { font-size: 1rem; line-height: 1.6; color: red; }
+                        .card { max-width: 800px; margin: auto; padding: 24px; border-radius: 12px;
+                                box-shadow: 0 6px 18px rgba(16,24,40,0.08); background: white; }
+                      </style>
+                    </head>
+                    <body>
+                      <div class="card">
+                        <h1>Taha Yılmaz</h1>
+                        <h2>Öğrenci No<span>:</span> 1240505082</h2>
+                        <p>
+                          Merhabalarr ben <strong><span style="color:black;">Taha Yılmaz</span></strong>. Yazılım mühendisliği öğrencisiyim bu sene 2.senem ve yazılım geliştirmeye büyük bir ilgi duyuyorum.
+                          Sınavlarına zamanında çalışan çalışkan bir öğrenciyimdir :)
+                          Spor meraklısı biriyimdir , Futbol benim icin hobi değil bir hayat şartıdır. 
+                          Bu sayfa, tamamen Java kullanarak yazdığım basit bir web sunucu tarafından oluşturulmuştur.
+                        </p>
+                      </div>
+                    </body>
+                    </html>
+                    """;
+
+            String response = "HTTP/1.1 200 OK\r\n" +
+                    "Content-Type: text/html; charset=UTF-8\r\n\r\n" +
+                    html;
+
+            out.write(response.getBytes());
+            out.flush();
+            client.close();
+        }
+    }
+}
