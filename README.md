@@ -23,7 +23,7 @@ Bu proje, Java programlama dili kullanılarak geliştirilen 3. parti , kütüpha
 
 ## 🖥️ Ekran Görüntüsü
 
-![Ekran Görüntüsü](screenshot.png) <!-- Dilersen bir ekran görüntüsü dosyası da ekleyebilirsin -->
+![Ekran Görüntüsü](screenshot.png) 
 
 ---
 
@@ -32,4 +32,4 @@ Bu proje, Java programlama dili kullanılarak geliştirilen 3. parti , kütüpha
 ### 1. Projeyi klonla:
 ```bash
 https://github.com/Thyilmaz/Web-Sunucu/blob/main/Kod%20K%C4%B1sm%C4%B1
-SimpleWebServer
+
