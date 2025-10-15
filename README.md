@@ -29,7 +29,7 @@ Bu proje, Java programlama dili kullanılarak geliştirilen 3. parti , kütüpha
 
 ## 🚀 Nasıl Çalıştırılır?
 
-### 1. Projeyi klonla:
+### Projeyi Kopyala ve Derleme programına Yapıştır:
 ```bash
 https://github.com/Thyilmaz/Web-Sunucu/blob/main/Kod%20K%C4%B1sm%C4%B1
 
